@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Keyla's Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Keyla Alemán, Growth Marketer for B2B SaaS. Strategy, brand, paid media, CRM and the team that ships it, across the US, Mexico and LATAM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Comforter+Brush&display=swap">
+<style>
+/* Layout: bold personal portfolio. Condensed all-caps headlines, B&W cutout on a tomato block,
+   stat column, differentiators, team flow, capabilities, skills & tools, filterable work with case drawers,
+   experience timeline, testimonials, a small personal strip, big CTA, black footer. */
+:root{
+  --paper:#FFFFFF;     /* page: pure white */
+  --paper-2:#FFFFFF;   /* panels stay white, separated by rules */
+  --ink:#111111;       /* text */
+  --ink-soft:#5C5C5C;  /* secondary text, neutral grey */
+  --tomato:#BF004F;    /* Pictorial Carmine: accent text */
+  --fill:#BF004F;      /* Pictorial Carmine: brand fills */
+  --salmon:#FF829D;    /* Salmon Pink */
+  --brush:#FFC0CB;     /* Pink */
+  --tint:#FFECEF;      /* Lavender Blush */
+  --on-tomato:#FFFFFF;
+  --sun:#FFC0CB;       /* Pink highlight */
+  --blush:#FFFFFF;
+  --rule:#1111111F;
+  --dark:#111111;      /* black bands */
+  --dark-fg:#FFFFFF;
+  --dark-soft:#A3A3A3;
+  --shadow:0 18px 40px -22px #11111180;
+
+  --display:"Gloock", "Bodoni 72", "Didot", Georgia, serif;
+  --sans:"Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --script:"Comforter Brush", "Brush Script MT", cursive;
+
+  --gl:max(16px, env(safe-area-inset-left, 0px));
+  --gr:max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0B0B0B; --paper-2:#0B0B0B; --ink:#FFFFFF; --ink-soft:#A6A6A6;
+    --tomato:#FF829D; --fill:#BF004F; --salmon:#FF829D; --brush:#BF004F; --tint:#1A0D11; --sun:#FF829D; --blush:#0B0B0B; --rule:#FFFFFF24;
+    --dark:#000000; --dark-fg:#FFFFFF; --dark-soft:#9E9E9E; --shadow:0 18px 40px -22px #000;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0B0B0B; --paper-2:#0B0B0B; --ink:#FFFFFF; --ink-soft:#A6A6A6;
+  --tomato:#FF829D; --fill:#BF004F; --salmon:#FF829D; --brush:#BF004F; --tint:#1A0D11; --sun:#FF829D; --blush:#0B0B0B; --rule:#FFFFFF24;
+  --dark:#000000; --dark-fg:#FFFFFF; --dark-soft:#9E9E9E; --shadow:0 18px 40px -22px #000;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+p{margin:0}
+:focus-visible{outline:3px solid var(--tomato);outline-offset:3px}
+.wrap{max-width:1200px;margin-inline:auto;padding-left:var(--gl);padding-right:var(--gr)}
+.sec{padding-block:clamp(64px,8vw,112px)}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:1;letter-spacing:0;margin:0;text-wrap:balance}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--tomato)}
+.h2{font-size:clamp(32px,4.4vw,58px)}
+.lead{font-size:clamp(17px,1.5vw,19px);color:var(--ink-soft);max-width:56ch}
+.script{font-family:var(--script);text-transform:none;font-weight:400;letter-spacing:0}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;font-family:var(--sans);transition:transform .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.red{background:var(--fill);border-color:var(--fill);color:var(--on-tomato)}
+.email-chip{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:14px;border:2px dashed currentColor;padding:7px 7px 7px 14px}
+.email-chip span{user-select:all}
+.email-chip button{font:inherit;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:0;padding:7px 12px;cursor:pointer;background:var(--sun);color:#121110}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--paper);border-bottom:1px solid var(--rule)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{font-family:var(--script);font-weight:400;font-size:40px;line-height:1;color:var(--tomato);text-decoration:none;text-transform:none;letter-spacing:0;display:inline-flex;align-items:center;white-space:nowrap;padding-block:2px}
+@media (max-width:480px){.logo{font-size:34px}}
+.totop{position:fixed;right:max(18px, calc(env(safe-area-inset-right,0px) + 18px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:80;
+  width:52px;height:52px;border-radius:50%;border:0;background:var(--fill);color:#fff;cursor:pointer;display:grid;place-items:center;
+  box-shadow:0 10px 24px -10px #00000066;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .3s, transform .3s, background .2s}
+.totop.show{opacity:1;transform:none;pointer-events:auto}
+.totop:hover{background:var(--ink)}
+.totop svg{width:22px;height:22px}
+.totop .tip{position:absolute;right:calc(100% + 10px);top:50%;transform:translate(6px,-50%);white-space:nowrap;background:var(--ink);color:var(--paper);
+  font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;opacity:0;pointer-events:none;transition:opacity .2s, transform .2s}
+.totop:hover .tip,.totop:focus-visible .tip{opacity:1;transform:translate(0,-50%)}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--tomato)}
+.nav .btn{padding:10px 16px;font-size:12px}
+@media (max-width:920px){.nav ul{display:none}}
+
+/* hero */
+.hero{padding-block:clamp(28px,4vw,48px) 0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(20px,3vw,48px);align-items:end}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.hero-text{min-width:0;padding-bottom:clamp(32px,5vw,64px)}
+.who{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;line-height:1.5}
+.who span{display:block;color:var(--ink-soft)}
+.hero h1{font-size:clamp(44px,6.6vw,96px);line-height:.95;margin-top:20px;position:relative}
+.hero h1 .l2{position:relative;display:inline-block}
+.hero h1 .script{position:absolute;right:-.15em;bottom:-.68em;font-size:.6em;color:var(--tomato);transform:rotate(-8deg);white-space:nowrap;z-index:2}
+.brush{display:block;width:min(560px,90%);height:auto;margin-top:6px;color:var(--brush)}
+.hero .lead{margin-top:22px;color:var(--ink)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-art{position:relative;aspect-ratio:1/1.08;width:100%;max-width:520px;justify-self:end}
+@media (max-width:900px){.hero-art{justify-self:center}}
+.hero-block{position:absolute;left:4%;right:0;top:30%;bottom:0;background:var(--fill)}
+.hero-photo{position:absolute;left:-4%;bottom:0;width:108%;filter:grayscale(1) contrast(1.12) brightness(1.03);transition:filter .6s ease}
+.hero-art:hover .hero-photo{filter:none}
+.hero-side{position:absolute;right:-6px;top:6%;writing-mode:vertical-rl;transform:rotate(180deg);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.hero-side::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--tomato)}
+.hero-tag{position:absolute;left:0;top:8%;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;line-height:1.5;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.hero-tag span{display:block;color:var(--ink-soft)}
+@media (max-width:520px){.hero-side{display:none}}
+
+/* about */
+.about{border-top:1px solid var(--rule)}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,80px)}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}}
+.about h2{font-size:clamp(26px,2.8vw,38px);margin-top:18px}
+.about p{margin-top:16px;max-width:58ch}
+.sig{display:flex;align-items:center;gap:18px;margin-top:26px}
+.sig b{font-family:var(--script);font-weight:400;font-size:72px;line-height:1;color:var(--tomato)}
+.sig span{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1.5;color:var(--ink-soft)}
+.motto{margin-top:26px;padding:18px 20px;background:var(--ink);color:var(--paper);font-family:var(--display);text-transform:uppercase;font-size:clamp(17px,1.7vw,22px);line-height:1.1}
+.stats{min-width:0}
+.big{font-family:var(--display);font-size:clamp(110px,14vw,170px);line-height:.85}
+.big + .eyebrow{margin-top:12px;color:var(--tomato)}
+.stat-list{list-style:none;margin:22px 0 0;padding:0;border-top:2px solid var(--ink)}
+.stat-list li{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rule)}
+.stat-list b{font-family:var(--display);font-weight:400;font-size:30px;line-height:1}
+.stat-list span{font-size:14.5px;color:var(--ink-soft)}
+.stat-list em{font-style:normal;color:var(--ink);font-weight:700}
+
+/* different */
+.diff{background:var(--dark);color:var(--dark-fg)}
+.diff .lead{color:var(--dark-soft)}
+.diff-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,5vw,56px)}
+.diff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+@media (max-width:980px){.diff-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.diff-grid{grid-template-columns:1fr}}
+.diff-card{background:var(--dark);border:1px solid #ffffff22;margin:0 -1px -1px 0;padding:28px 24px 30px;display:flex;flex-direction:column;gap:14px;transition:background .3s}
+.diff-card:hover{background:#1f1b19}
+.diff-card .n{font-family:var(--display);font-size:52px;line-height:1;color:var(--tomato)}
+.diff-card h3{font-size:21px;line-height:1.05}
+.diff-card p{font-size:15px;color:var(--dark-soft)}
+
+/* team */
+.team-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,72px);align-items:start}
+@media (max-width:900px){.team-grid{grid-template-columns:1fr}}
+.team-grid .h2 + .lead{margin-top:18px}
+.roster{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+@media (max-width:480px){.roster{grid-template-columns:1fr}}
+.member{border:2px solid var(--ink);padding:18px;display:grid;gap:6px;background:var(--paper)}
+.member.lead-card{background:var(--fill);border-color:var(--fill);color:var(--on-tomato)}
+.member .r{font-family:var(--display);text-transform:uppercase;font-size:24px;line-height:1}
+.member p{font-size:14px;opacity:.85}
+.flow{list-style:none;margin:0;padding:0;counter-reset:f;display:grid;gap:0;border-left:2px solid var(--ink)}
+.flow li{counter-increment:f;position:relative;padding:0 0 26px 34px}
+.flow li:last-child{padding-bottom:0}
+.flow li::before{content:counter(f,decimal-leading-zero);position:absolute;left:-17px;top:-2px;width:32px;height:32px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--ink);display:grid;place-items:center;font-size:11px;font-weight:800}
+.flow li:first-child::before,.flow li:last-child::before{background:var(--tomato);border-color:var(--tomato);color:#fff}
+.flow h3{font-size:28px}
+.flow .own{display:inline-block;margin-top:6px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--sun);color:#121110;padding:3px 8px}
+.flow p{margin-top:8px;font-size:15px;color:var(--ink-soft);max-width:52ch}
+
+.lead-head{display:flex;align-items:end;gap:24px 40px;flex-wrap:wrap;margin-bottom:clamp(32px,5vw,56px)}
+.lh-text{flex:1 1 420px;display:grid;gap:18px;padding-bottom:20px}
+.lh-text .lead{max-width:60ch}
+.lead-head .h2{max-width:20ch;font-size:clamp(28px,3.6vw,46px)}
+.org{display:grid;grid-template-columns:1fr minmax(240px,.8fr) 1fr;gap:clamp(16px,3vw,40px);align-items:center;position:relative}
+.org::before{content:"";position:absolute;left:8%;right:8%;top:50%;height:2px;background:var(--ink);z-index:0}
+@media (max-width:900px){.org{grid-template-columns:1fr}.org::before{display:none}.org-core{order:-1}}
+.org-col{display:grid;gap:12px;position:relative;z-index:1;min-width:0}
+.org-label{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:2px}
+.org-card{background:var(--paper);border:2px solid var(--ink);padding:16px 18px;display:grid;gap:4px;transition:transform .25s,box-shadow .25s}
+.org-card:hover{transform:translateY(-3px);box-shadow:6px 6px 0 var(--salmon)}
+.org-card b{font-family:var(--display);font-weight:400;font-size:19px;text-transform:uppercase;line-height:1}
+.org-card span{font-size:14px;color:var(--ink-soft)}
+.org-core{position:relative;z-index:1;background:var(--fill);color:var(--on-tomato);padding:28px 26px;display:grid;gap:8px;box-shadow:var(--shadow)}
+.org-core b{font-family:var(--script);font-weight:400;font-size:84px;line-height:1}
+.org-core ul{margin:6px 0 0;padding-left:18px;font-size:14.5px;display:grid;gap:4px}
+
+/* character stickers: stop-motion boil */
+.char{display:block;height:auto;transform-origin:50% 90%}
+.char.live{animation:boil 1.4s steps(1) infinite}
+.shelf{border-bottom:2px solid var(--ink)}
+.shelf .char{align-self:end;margin-bottom:-2px}
+@keyframes boil{0%{transform:rotate(0) translate(0,0)}25%{transform:rotate(.8deg) translate(1px,-1px)}50%{transform:rotate(-.6deg) translate(-1px,0)}75%{transform:rotate(.4deg) translate(0,1px)}}
+.hello{position:relative;display:grid;justify-items:center;align-self:center}
+.hello .char{width:min(150px,42%)}
+.bubble{position:relative;background:var(--fill);color:#fff;font-weight:800;font-size:16px;padding:12px 16px;margin-bottom:14px;max-width:240px;text-align:center}
+.bubble span{display:block;font-weight:500;font-size:14px;opacity:.75;margin-top:4px}
+.bubble::after{content:"";position:absolute;left:50%;bottom:-12px;margin-left:-12px;border:12px solid transparent;border-bottom:0;border-top-color:var(--fill)}
+.lead-char{width:clamp(150px,16vw,210px);margin-left:auto}
+.sk-char{width:clamp(120px,12vw,160px);margin-left:auto}
+.work-char{width:clamp(110px,11vw,150px);margin-left:auto;margin-right:12px}
+.made{position:relative}
+.made-char{width:92px;flex:none;margin:-40px 0 -10px}
+@media (max-width:700px){.lead-char,.sk-char,.work-char{width:110px}.made-char{width:70px;margin:0}}
+
+@media (prefers-reduced-motion: reduce){.char,.bubble,.tile{animation:none !important}}
+
+/* results strip */
+.results{background:var(--tint);border-block:1px solid var(--rule)}
+.res-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.res-list li{padding:28px 18px 26px;display:grid;gap:6px;align-content:start;border-left:1px solid var(--rule)}
+.res-list li:first-child{border-left:0;padding-left:0}
+.res-list b{font-family:var(--display);font-weight:400;font-size:clamp(36px,3.6vw,52px);line-height:1;color:var(--tomato);font-variant-numeric:tabular-nums;white-space:nowrap}
+.res-list li > span{font-size:13.5px;line-height:1.35;color:var(--ink-soft)}
+@media (max-width:980px){.res-list{grid-template-columns:repeat(3,minmax(0,1fr))}.res-list li:nth-child(4){border-left:0;padding-left:0}.res-list li:nth-child(n+4){border-top:1px solid var(--rule)}}
+@media (max-width:520px){.res-list{grid-template-columns:repeat(2,minmax(0,1fr))}.res-list li{padding:20px 12px}.res-list li:nth-child(odd){border-left:0;padding-left:0}.res-list li:nth-child(4){border-left:1px solid var(--rule);padding-left:12px}.res-list li:nth-child(n+3){border-top:1px solid var(--rule)}}
+
+/* capabilities */
+.caps{border-top:1px solid var(--rule)}
+.caps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,40px) clamp(20px,3vw,40px);margin-top:clamp(28px,4vw,48px)}
+@media (max-width:860px){.caps-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.caps-grid{grid-template-columns:1fr}}
+.cap{display:grid;gap:10px;align-content:start}
+.cap svg{width:34px;height:34px;color:var(--tomato)}
+.cap h3{font-size:19px}
+.cap p{font-size:15px;color:var(--ink-soft)}
+
+/* skills & tools */
+.st-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px)}
+@media (max-width:900px){.st-grid{grid-template-columns:1fr}}
+.st-grid>div{min-width:0}
+.tools{grid-template-columns:repeat(4,minmax(0,1fr))}
+.tools b{overflow-wrap:anywhere}
+.skillset{display:grid;gap:18px;margin-top:26px}
+.skillset h4{margin:0 0 8px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:14px;font-weight:600;padding:7px 12px;border:1.5px solid var(--ink);background:var(--paper)}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);border-left:1px solid var(--rule);margin-top:26px}
+@media (max-width:520px){.tools{grid-template-columns:repeat(3,minmax(0,1fr))}.tools b{font-size:16px}}
+.tools div{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:18px 10px;text-align:center;display:grid;gap:4px;align-content:center;min-height:86px;transition:background .25s,color .25s}
+.tools div:hover{background:var(--ink);color:var(--paper)}
+.tools b{font-family:var(--display);font-weight:400;font-size:19px;text-transform:uppercase;line-height:1}
+.tools small{font-size:11px;color:var(--ink-soft);letter-spacing:.04em}
+.tools div:hover small{color:inherit}
+
+/* what I bring */
+.sk-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:0}
+.sk-head > div,.sk-head .tabs{margin-bottom:18px}
+#pane-stack,#pane-creds{padding-top:24px}
+.tabs{display:flex;border:2px solid var(--ink)}
+.tabs button{font:inherit;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:12px 16px;border:0;background:none;color:var(--ink);cursor:pointer;display:flex;gap:8px;align-items:center}
+.tabs button + button{border-left:2px solid var(--ink)}
+.tabs button small{font-size:11px;color:var(--ink-soft)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.tabs button[aria-selected="true"] small{color:var(--tomato)}
+.pane{animation:rise .4s cubic-bezier(.2,.7,.2,1)}
+.sk-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){.sk-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.sk-grid{grid-template-columns:1fr}}
+.sk{padding:18px 18px 20px 0;border-bottom:1px solid var(--rule);transition:padding .25s, background .25s}
+.sk:hover{background:var(--ink);color:var(--paper);padding-left:16px}
+.sk h4{margin:0 0 6px;font-family:var(--display);font-weight:400;font-size:18px;text-transform:uppercase;line-height:1}
+.sk p{font-size:14.5px;color:var(--ink-soft)}
+.sk:hover p{color:inherit;opacity:.8}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.pills button{font:inherit;font-size:12px;font-weight:700;padding:7px 12px;border:1.5px solid var(--rule);background:none;color:var(--ink-soft);cursor:pointer;border-radius:999px}
+.pills button[aria-pressed="true"]{border-color:var(--tomato);color:var(--tomato)}
+.toolwall{display:flex;flex-wrap:wrap;gap:10px}
+.tool{font-family:var(--display);font-size:clamp(15px,1.7vw,21px);text-transform:uppercase;line-height:1;padding:10px 16px;border:2px solid var(--ink);transition:opacity .3s, background .3s, color .3s, transform .3s}
+.tool:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
+.toolwall.filtered .tool{opacity:.18}
+.toolwall.filtered .tool.on{opacity:1;background:var(--fill);border-color:var(--fill);color:var(--on-tomato)}
+.cred-list{list-style:none;margin:0;padding:0}
+.cred-list li{display:grid;grid-template-columns:90px 1fr auto;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--rule)}
+.cred-list .cy{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--tomato)}
+.cred-list b{font-family:var(--display);font-weight:400;font-size:clamp(17px,2vw,25px);text-transform:uppercase;line-height:1}
+.cred-list li > span:last-child{color:var(--ink-soft);font-size:14px;text-align:right}
+@media (max-width:560px){.cred-list li{grid-template-columns:60px 1fr}.cred-list li > span:last-child{grid-column:2;text-align:left}}
+
+/* work */
+.work-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.wh-text{flex:1 1 360px;display:grid;gap:18px;padding-bottom:10px}
+.work-head{flex-wrap:nowrap}
+@media (max-width:520px){.work-head,.lead-head{flex-wrap:wrap}}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-left:-10px}
+.filters button{font:inherit;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border:0;background:none;padding:8px 10px;cursor:pointer;color:var(--ink-soft);border-bottom:2px solid transparent}
+.filters button[aria-pressed="true"]{color:var(--ink);border-color:var(--tomato)}
+.work-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 22px;margin-top:28px}
+.wcard.feat{grid-column:span 2}
+.wcard.feat .thumb{aspect-ratio:16/9.6}
+@media (max-width:900px){.work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.work-grid{grid-template-columns:1fr}.wcard.feat{grid-column:auto}}
+.thumb.white{background:#fff}
+.remote{margin:26px 0 0;display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:end}
+.remote img{width:120px;aspect-ratio:3/4;object-fit:cover;object-position:50% 70%}
+.remote figcaption{font-size:14px;color:var(--ink-soft)}
+.remote b{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+.wcard{all:unset;cursor:pointer;display:grid;gap:12px;outline-offset:4px;min-width:0}
+.wcard:focus-visible{outline:3px solid var(--tomato)}
+.wcard[hidden]{display:none}
+.thumb{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--ink)}
+.thumb img{width:100%;height:100%;object-fit:cover;will-change:translate;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.wcard:hover .thumb img{transform:scale(1.05)}
+.thumb:not(.white) img.pxi{position:absolute;left:0;top:-9%;height:118%}
+[data-px],[data-pxx]{will-change:translate}
+.box{will-change:transform,clip-path}
+.progress{position:fixed;left:0;top:0;bottom:0;width:4px;z-index:70;background:var(--rule);pointer-events:none}
+.progress i{position:absolute;inset:0;background:var(--fill);transform:scaleY(0);transform-origin:50% 0}
+.progress span{position:fixed;left:10px;bottom:calc(14px + env(safe-area-inset-bottom,0px));font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--tomato);
+  writing-mode:vertical-rl;transform:rotate(180deg);font-variant-numeric:tabular-nums}
+@media (max-width:700px){.progress{width:3px}.progress span{display:none}}
+.made{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px;padding:18px 20px;border:1px dashed #ffffff44}
+.footer .made p{margin:0;font-size:14px;color:var(--dark-fg);max-width:none;flex:1 1 320px}
+.made b{font-family:var(--script);font-weight:400;font-size:42px;color:var(--tomato);margin-right:6px}
+.made a{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dark-fg);text-decoration:none;border-bottom:2px solid var(--tomato);padding-bottom:2px}
+.cta,.partners,.hero{overflow:hidden}
+.thumb .type{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-family:var(--display);font-size:clamp(26px,2.8vw,40px);line-height:1;text-transform:uppercase;color:#fff;background:var(--fill);padding:12px}
+.thumb .type.ink{background:var(--fill);color:#fff}
+.thumb .open{position:absolute;right:14px;bottom:14px;background:var(--paper);color:var(--ink);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px}
+.wmeta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;align-items:baseline}
+.wmeta h3{font-size:clamp(17px,1.7vw,21px);line-height:1.1}
+.wmeta span{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.wcard p{font-size:15px;color:var(--ink-soft);max-width:54ch}
+
+/* case dialog */
+dialog.case{border:0;padding:0;max-width:min(980px,calc(100vw - 24px));width:100%;max-height:calc(100dvh - 24px);background:var(--paper);color:var(--ink);box-shadow:var(--shadow)}
+dialog.case::backdrop{background:#121110b3}
+.case-in{padding:clamp(20px,4vw,48px);display:grid;gap:22px}
+.case-top{display:flex;justify-content:space-between;gap:16px;align-items:start}
+.case h2{font-size:clamp(26px,3.6vw,46px)}
+.case .close{font:inherit;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border:2px solid var(--ink);background:none;color:var(--ink);padding:8px 12px;cursor:pointer;flex:none}
+.case-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
+@media (max-width:760px){.case-cols{grid-template-columns:1fr}}
+.case h4{margin:0 0 6px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--tomato)}
+.case-copy{display:grid;gap:18px;min-width:0}
+.case-wins{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.case-wins li{display:grid;grid-template-columns:88px 1fr;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--rule);font-size:14.5px}
+.case-wins b{font-family:var(--display);font-weight:400;font-size:28px;color:var(--tomato)}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
+.gallery img{width:100%;aspect-ratio:1;object-fit:cover}
+.gallery img.wide{grid-column:span 2;aspect-ratio:16/9}
+.gallery img.tall{aspect-ratio:9/16;object-position:50% 70%}
+.gallery img.wide.tall{aspect-ratio:1/1;object-position:30% 30%}
+.gallery img.wide.sq{aspect-ratio:auto;object-fit:contain;background:#fff}
+.gallery img.contain{object-fit:contain;background:#fff;aspect-ratio:auto}
+.case-links{display:flex;flex-wrap:wrap;gap:8px}
+.case-links a{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--ink);padding:8px 12px}
+.case-links a:hover{background:var(--ink);color:var(--paper)}
+.case-links a::after{content:" \2197"}
+.note-nda{font-size:13px;color:var(--ink-soft);border-left:3px solid var(--sun);padding-left:10px}
+
+/* partners */
+.partners{border-block:1px solid var(--rule);padding-block:36px}
+.partners .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 36px;align-items:center;margin-top:20px}
+.partners .row span{font-family:var(--display);font-size:clamp(17px,2vw,25px);text-transform:uppercase;color:var(--ink-soft);transition:color .25s}
+.partners .row span:hover{color:var(--ink)}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;margin-top:28px;border-top:2px solid var(--ink)}
+@media (max-width:420px){.creds{grid-template-columns:1fr}}
+.creds div{padding:12px 0;border-bottom:1px solid var(--rule);font-size:14px}
+.creds b{display:block;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.creds span{color:var(--ink-soft)}
+
+/* timeline */
+.exp{background:var(--dark);color:var(--dark-fg)}
+.exp .lead{color:var(--dark-soft)}
+.rail-wrap{overflow-x:auto;scrollbar-width:none;margin-top:36px}
+.rail-wrap::-webkit-scrollbar{display:none}
+.rail{position:relative;display:grid;grid-template-columns:repeat(6,minmax(130px,1fr));min-width:800px}
+.rail::before{content:"";position:absolute;left:0;right:0;top:11px;height:2px;background:#ffffff2a}
+.rail .fill{position:absolute;left:0;top:11px;height:2px;background:var(--tomato);transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.stop{position:relative;background:none;border:0;color:var(--dark-soft);text-align:left;padding:0 10px 6px 0;cursor:pointer;font-family:var(--sans)}
+.stop .dot{display:block;width:24px;height:24px;border-radius:50%;border:2px solid #ffffff55;background:var(--dark);margin-bottom:14px;transition:transform .3s, background .3s}
+.stop .yr{display:block;font-family:var(--display);font-size:28px;line-height:1;color:var(--dark-fg)}
+.stop .co{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-top:6px}
+.stop.done .dot{background:var(--tomato);border-color:var(--tomato)}
+.stop[aria-selected="true"] .dot{transform:scale(1.25);background:var(--sun);border-color:var(--sun)}
+.stop[aria-selected="true"] .co{color:var(--dark-fg)}
+.panel{display:grid;grid-template-columns:1fr auto 240px;gap:28px;margin-top:36px;align-items:end;min-height:220px;border-top:1px solid #ffffff22;padding-top:28px}
+@media (max-width:760px){.panel{grid-template-columns:1fr;min-height:0}}
+.panel .when{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sun)}
+.panel h3{font-size:clamp(30px,4.2vw,52px);margin-top:10px}
+.panel .role{color:var(--dark-soft);margin-top:6px}
+.panel .body{margin-top:14px;max-width:62ch;font-size:16.5px}
+.panel .res{text-align:right}
+.pimg{width:240px;aspect-ratio:4/3;object-fit:cover;object-position:40% 35%;transform:rotate(2deg);box-shadow:0 18px 30px -16px #000;background:#fff}
+.pimg.ph{background:none;box-shadow:none}
+@media (max-width:760px){.pimg{width:100%;transform:none}.pimg.ph{display:none}}
+@media (max-width:760px){.panel .res{text-align:left}}
+.panel .res b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(48px,6.6vw,84px);line-height:.9;color:var(--tomato)}
+.panel .res span{font-size:13px;color:var(--dark-soft);display:block;max-width:24ch;margin-left:auto}
+@media (max-width:760px){.panel .res span{margin-left:0}}
+.rail-ctrl{display:flex;gap:10px;margin-top:28px}
+.rail-ctrl button{width:46px;height:46px;border:1.5px solid #ffffff55;background:none;color:var(--dark-fg);font-size:18px;cursor:pointer}
+.rail-ctrl button:hover{background:var(--dark-fg);color:var(--dark)}
+.panel.swap > *{animation:rise .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes rise{from{opacity:.2;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* testimonials */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(28px,4vw,44px)}
+@media (max-width:900px){.quotes{grid-template-columns:1fr}}
+.q{margin:0;background:var(--paper);border:2px solid var(--ink);padding:26px 24px;display:flex;flex-direction:column;gap:18px}
+.q .mark{font-family:var(--display);font-size:64px;line-height:.6;color:var(--tomato);height:30px}
+.q p{font-size:16px;line-height:1.5}
+.q footer{margin-top:auto;font-size:13px;line-height:1.4}
+.q footer b{display:block;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.q footer span{color:var(--ink-soft)}
+
+/* off the clock */
+.otc{padding-block:clamp(48px,6vw,80px);border-top:1px solid var(--rule)}
+.otc-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,4vw,56px);align-items:center}
+@media (max-width:860px){.otc-grid{grid-template-columns:1fr}}
+.otc h2{font-size:clamp(26px,3.6vw,44px);margin-top:14px}
+.otc-photo{margin-top:20px;position:relative}
+.otc-photo img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.otc-photo figcaption{font-size:12px;margin-top:8px;color:var(--ink-soft)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:480px){.cards{grid-template-columns:1fr}}
+.card{all:unset;cursor:pointer;perspective:1000px;display:block;min-height:200px}
+.card:focus-visible{outline:3px solid var(--tomato);outline-offset:3px}
+.card-in{position:relative;display:block;min-height:200px;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+.card[aria-pressed="true"] .card-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:18px;display:flex;flex-direction:column;gap:8px;background:var(--paper);border:2px solid var(--ink)}
+.face.back{transform:rotateY(180deg);background:var(--ink);color:var(--paper)}
+.face h3{font-size:19px}
+.face p{font-size:14px;line-height:1.45}
+.face small{margin-top:auto;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tomato)}
+
+/* CTA + footer */
+.cta{padding-block:clamp(64px,9vw,120px);position:relative;overflow:hidden}
+.cta h2{font-size:clamp(38px,6.6vw,100px);line-height:.95}
+.cta h2 span{color:var(--tomato);display:block}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:32px}
+.cta .lead{margin-top:20px}
+.footer{background:var(--dark);color:var(--dark-fg);padding-block:48px calc(28px + env(safe-area-inset-bottom,0px))}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+@media (max-width:760px){.foot-grid{grid-template-columns:1fr}}
+.footer .logo{color:var(--dark-fg)}
+.footer p{font-size:14px;color:var(--dark-soft);margin-top:10px;max-width:36ch}
+.footer h4{margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px;color:var(--dark-soft)}
+.footer ul a{text-decoration:none}
+.footer ul a:hover{color:var(--dark-fg)}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:36px;padding-top:18px;border-top:1px solid #ffffff22;font-size:12px;color:var(--dark-soft)}
+
+/* cursor & toast */
+.cursor{position:fixed;left:0;top:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--fill);pointer-events:none;z-index:100;
+  display:grid;place-items:center;color:#fff;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;opacity:0;
+  transition:width .25s,height .25s,margin .25s}
+.cursor.on{opacity:1}
+.cursor span{opacity:0;transition:opacity .2s}
+.cursor.big{width:64px;height:64px;margin:-80px 0 0 10px}
+.cursor.big span{opacity:1}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;z-index:120;background:var(--ink);color:var(--paper);padding:10px 18px;font-size:14px;font-weight:600;transition:all .3s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition-duration:.01s !important}html{scroll-behavior:auto}}
+</style>
+<meta property="og:title" content="Keyla's Portfolio">
+<meta property="og:description" content="Keyla Alemán, Growth Marketer for B2B SaaS.">
+<meta property="og:image" content="img/keyla-stage.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23BF004F'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='34' fill='white'%3EK%3C/text%3E%3C/svg%3E">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Keyla Alemán, back to top">Keyla Alemán</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+    </ul>
+    <a class="btn solid" href="#contact">Let's talk ↗</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="who">Keyla Alemán<span>Growth Marketer · B2B SaaS</span></p>
+      <h1><span class="l1" data-pxx="-0.18" style="display:inline-block">Growth</span><br><span class="l2" data-pxx="0.12">Marketing<span class="script" aria-hidden="true">end to end</span></span></h1>
+      <svg class="brush" viewBox="0 0 560 40" aria-hidden="true"><defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="6"/></filter></defs>
+        <g filter="url(#rough)" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M8 26 C 140 10, 300 8, 548 14" stroke-width="12"/><path d="M40 32 C 180 20, 330 20, 520 24" stroke-width="6" opacity=".8"/></g></svg>
+      <p class="lead">I build the strategy, the brand and the campaigns, and I lead the team that turns them into pipeline. 13 years growing B2B tech in the US, Mexico and LATAM.</p>
+      <div class="ctas">
+        <a class="btn red" href="#work" data-cursor="View">View my work ↗</a>
+        <a class="btn" href="https://www.linkedin.com/in/keylaaleman" target="_blank" rel="noopener" data-cursor="Open">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="hero-art" id="heroArt" data-cursor="Hello">
+      <div class="hero-block" id="heroBlock" data-px="-0.08"></div>
+      <img class="hero-photo" id="heroPhoto" data-px="0.14" src="img/keyla-cutout.png" alt="Portrait of Keyla Alemán" width="800" height="645">
+      <p class="hero-tag">Based in<span>Monterrey, Mexico</span></p>
+      <p class="hero-side">US · Mexico · LATAM</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="numbers" aria-label="Results">
+  <div class="wrap"><ul class="res-list"><li><b><span class="ct" data-to="13">13</span>+</b><span>years in B2B tech</span></li><li><b>$<span class="ct" data-to="2">2</span>M</b><span>revenue from demand generation</span></li><li><b>+<span class="ct" data-to="40">40</span>%</b><span>client acquisition after a brand refresh</span></li><li><b>+<span class="ct" data-to="35">35</span>%</b><span>SQL conversion from nurture</span></li><li><b>+<span class="ct" data-to="25">25</span>%</b><span>pipeline growth across LATAM</span></li><li><b><span class="ct" data-to="3">3</span>x</b><span>Microsoft Education Partner of the Year</span></li></ul></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about sec" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">About me</p>
+      <h2>I'm the person you call when growth needs to happen.</h2>
+      <p>I've rebuilt brands that had outgrown their own names. I've turned standard B2B campaigns into content clients share and buy from. I've set up CRMs from scratch, launched products in four markets and taken a platform to market in the middle of a pandemic.</p>
+      <p>Today I lead growth at an HR-tech SaaS, with a team of an SDR, a digital trafficker and a graphic designer, and I work with Product, Customer Success and Sales to take every launch from strategy to adoption.</p>
+      <div class="sig"><b>Keyla</b><span>Keyla Alemán<br>Growth Marketer</span></div>
+      <p class="motto" data-pxx="0.06">Curious enough to try it. Relentless enough to make it work.</p>
+    </div>
+    <figure class="hello" style="margin:0">
+      <p class="bubble">Hi, I'm Keyla.<span>Yes, I picked up on the first ring.</span></p>
+      <img class="char live" src="img/char-phone.png" alt="Cartoon of Keyla answering a phone call" width="225" height="520" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- WHAT MAKES ME DIFFERENT -->
+<section class="diff sec" id="different">
+  <div class="wrap">
+    <div class="diff-head">
+      <div><p class="eyebrow">What makes me different</p><h2 class="h2" data-pxx="0.05" style="margin-top:14px">Four reasons teams<br>hire me</h2></div>
+      <p class="lead">Most marketers own a piece of the funnel. I've owned all of it, and I know how the pieces affect each other.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card"><span class="n">01</span><h3>I run the whole funnel</h3><p>Strategy, brand, paid, CRM and follow-up live in one plan, so leads don't get lost between teams.</p></div>
+      <div class="diff-card"><span class="n">02</span><h3>Creative with the data open</h3><p>I've directed photoshoots and built lead scoring in HubSpot. I use both skills every week.</p></div>
+      <div class="diff-card"><span class="n">03</span><h3>AI in my daily work</h3><p>Claude, ChatGPT and Gemini help my team ship content, sequences and reports in days. I train the team to use them too.</p></div>
+      <div class="diff-card"><span class="n">04</span><h3>Four markets, two languages</h3><p>I've grown brands in the US, Mexico, LATAM and Europe, and I write campaigns in English and Spanish.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="sec" id="team">
+  <div class="wrap">
+    <div class="lead-head shelf">
+      <div class="lh-text">
+        <div><p class="eyebrow">How I lead</p><h2 class="h2" data-pxx="0.05" style="margin-top:14px">I lead marketing and work across the company</h2></div>
+        <p class="lead">I set the growth strategy and lead the team that executes it. Then I work with Product, Customer Success and Sales so the message, the launch and the follow-up line up.</p>
+      </div>
+      <img class="char lead-char" src="img/char-board.png" alt="Cartoon of Keyla mapping a brand identity on a whiteboard" width="538" height="520" loading="lazy">
+    </div>
+    <div class="org">
+      <div class="org-col">
+        <p class="org-label">The team I lead</p>
+        <div class="org-card"><b>SDR</b><span>Lead qualification, follow-up and CRM hygiene</span></div>
+        <div class="org-card"><b>Digital trafficker</b><span>Paid media on Meta, Google and LinkedIn</span></div>
+        <div class="org-card"><b>Graphic designer</b><span>Campaign creative, product visuals and video</span></div>
+      </div>
+      <div class="org-core">
+        <span class="org-label" style="color:inherit;opacity:.85">Growth &amp; marketing lead</span>
+        <b>Keyla</b>
+        <ul><li>Growth strategy and budget</li><li>Positioning and brand</li><li>Pipeline reporting to leadership</li></ul>
+      </div>
+      <div class="org-col">
+        <p class="org-label">Who I partner with</p>
+        <div class="org-card"><b>Product</b><span>Go-to-market strategy and product launches</span></div>
+        <div class="org-card"><b>Customer Success</b><span>Change management and adoption campaigns for current clients</span></div>
+        <div class="org-card"><b>Sales</b><span>Lead handoff, pipeline reviews and enablement</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="caps sec" id="services">
+  <div class="wrap">
+    <p class="eyebrow">What I do</p>
+    <h2 class="h2" data-pxx="0.05" style="margin-top:14px">Capabilities</h2>
+    <div class="caps-grid">
+      <div class="cap"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 26 L12 16 L18 21 L28 6"/><path d="M20 6 H28 V14"/></svg><h3>Growth strategy</h3><p>Go-to-market plans, ICP and messaging, channel mix and budget tied to pipeline goals.</p></div>
+      <div class="cap"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 6 H28 L19 17 V26 L13 23 V17 Z"/></svg><h3>Demand generation</h3><p>Multichannel campaigns, lead nurturing, email sequences, webinars and events.</p></div>
+      <div class="cap"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="4"/></svg><h3>Brand &amp; positioning</h3><p>Brand refreshes, voice guidelines, creative direction and product launches.</p></div>
+      <div class="cap"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="7" width="24" height="16"/><path d="M11 27 H21 M16 23 V27"/><path d="M9 18 L13 13 L17 16 L23 11"/></svg><h3>Paid media</h3><p>Meta, Google and LinkedIn campaigns, audits and spend tied to lead quality.</p></div>
+      <div class="cap"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="8" cy="8" r="3.5"/><circle cx="24" cy="8" r="3.5"/><circle cx="16" cy="24" r="3.5"/><path d="M10.5 10.5 L14 21 M21.5 10.5 L18 21 M11.5 8 H20.5"/></svg><h3>CRM &amp; automation</h3><p>HubSpot setup, lead scoring, routing, nurture workflows and pipeline reporting.</p></div>
+      <div class="cap"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="7" width="18" height="18"/><path d="M22 13 L28 9 V23 L22 19"/></svg><h3>Content &amp; video</h3><p>Copy, scripts, success stories, podcasts, social and trend-driven content.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS & TOOLS -->
+<section class="sec" id="skills" style="border-top:1px solid var(--rule)">
+  <div class="wrap">
+    <div class="sk-head shelf">
+      <div><p class="eyebrow">Skills, stack &amp; credentials</p><h2 class="h2" data-pxx="0.05" style="margin-top:14px">What I bring</h2></div>
+      <img class="char sk-char" src="img/char-laptop.png" alt="Cartoon of Keyla working on a laptop" width="501" height="449" loading="lazy">
+      <div class="tabs" role="tablist" aria-label="What I bring">
+        <button type="button" role="tab" id="tab-skills" aria-controls="pane-skills" aria-selected="true">Skills</button>
+        <button type="button" role="tab" id="tab-stack" aria-controls="pane-stack" aria-selected="false" tabindex="-1">Stack <small>20</small></button>
+        <button type="button" role="tab" id="tab-creds" aria-controls="pane-creds" aria-selected="false" tabindex="-1">Education <small>4</small></button>
+      </div>
+    </div>
+
+    <div class="pane" id="pane-skills" role="tabpanel" aria-labelledby="tab-skills">
+      <div class="sk-grid">
+        <div class="sk"><h4>Growth &amp; demand gen</h4><p>Multichannel campaigns · Lead nurturing · Email sequences · ICP segmentation · A/B testing · Events &amp; webinars</p></div>
+        <div class="sk"><h4>Go-to-market</h4><p>Positioning · Product launches · Partner channels · Market entry in LATAM · Change management &amp; adoption</p></div>
+        <div class="sk"><h4>CRM &amp; analytics</h4><p>Lead scoring · Lead routing · Pipeline reporting · CPL, conversion &amp; ROI · Attribution</p></div>
+        <div class="sk"><h4>Brand &amp; content</h4><p>Creative direction · Copywriting · Video scripts · Landing pages · Brand systems</p></div>
+        <div class="sk"><h4>AI &amp; automation</h4><p>AI-assisted content · Prompt engineering · Workflow design · Marketing automation</p></div>
+        <div class="sk"><h4>Leadership</h4><p>Team lead: SDR, digital trafficker, graphic designer · Cross-functional with Product, CS &amp; Sales · Spanish &amp; English</p></div>
+      </div>
+    </div>
+
+    <div class="pane" id="pane-stack" role="tabpanel" aria-labelledby="tab-stack" hidden>
+      <div class="pills" role="group" aria-label="Filter tools"><button type="button" aria-pressed="true" data-c="all">All</button><button type="button" aria-pressed="false" data-c="crm">CRM</button><button type="button" aria-pressed="false" data-c="outbound">Outbound</button><button type="button" aria-pressed="false" data-c="email">Email</button><button type="button" aria-pressed="false" data-c="paid">Paid media</button><button type="button" aria-pressed="false" data-c="ai">AI</button><button type="button" aria-pressed="false" data-c="auto">Automation & reporting</button><button type="button" aria-pressed="false" data-c="web">Web</button><button type="button" aria-pressed="false" data-c="design">Design & video</button><button type="button" aria-pressed="false" data-c="pm">Projects</button></div>
+      <div class="toolwall" id="toolwall"><span class="tool" data-c="crm">HubSpot</span><span class="tool" data-c="crm">Salesforce</span><span class="tool" data-c="crm">Microsoft Dynamics</span><span class="tool" data-c="outbound">Amplemarket</span><span class="tool" data-c="outbound">Apollo</span><span class="tool" data-c="email">Mailchimp</span><span class="tool" data-c="paid">Meta Ads</span><span class="tool" data-c="paid">Google Ads</span><span class="tool" data-c="paid">LinkedIn Ads</span><span class="tool" data-c="ai">Claude</span><span class="tool" data-c="ai">ChatGPT</span><span class="tool" data-c="ai">Gemini</span><span class="tool" data-c="auto">Zapier</span><span class="tool" data-c="auto">Porter Metrics</span><span class="tool" data-c="web">Webflow</span><span class="tool" data-c="web">WordPress</span><span class="tool" data-c="design">Canva</span><span class="tool" data-c="design">Figma</span><span class="tool" data-c="design">CapCut</span><span class="tool" data-c="pm">Asana</span></div>
+    </div>
+
+    <div class="pane" id="pane-creds" role="tabpanel" aria-labelledby="tab-creds" hidden>
+      <ul class="cred-list">
+        <li><span class="cy">2025</span><b>Product Growth Certification</b><span>Product School</span></li>
+        <li><span class="cy">2024</span><b>Product Leader Certification</b><span>Product School</span></li>
+        <li><span class="cy">B.A.</span><b>Marketing</b><span>Universidad del Valle de México</span></li>
+        <li><span class="cy">Conc.</span><b>Global Business</b><span>Walden University</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="sec" id="work" style="border-top:1px solid var(--rule)">
+  <div class="wrap">
+    <div class="work-head shelf">
+      <div class="wh-text"><p class="eyebrow">Portfolio</p><h2 class="h2" data-pxx="0.05" style="margin-top:14px">Work I'm proud of</h2>
+        <div class="filters" role="group" aria-label="Filter work">
+        <button type="button" aria-pressed="true" data-f="all">All</button>
+        <button type="button" aria-pressed="false" data-f="growth">Growth &amp; GTM</button>
+        <button type="button" aria-pressed="false" data-f="brand">Brand</button>
+        <button type="button" aria-pressed="false" data-f="launch">Launches &amp; adoption</button>
+      </div>
+      </div>
+      <img class="char work-char" src="img/char-tablet.png" alt="Cartoon of Keyla planning a campaign timeline" width="412" height="434" loading="lazy">
+    </div>
+    <div class="work-grid">
+      <button class="wcard" type="button" data-case="relaunch" data-tags="growth brand" data-cursor="Open">
+        <div class="thumb"><img class="pxi" src="img/keyla-stage.jpg" alt="Keyla speaking to an audience at a Pyxoom event" loading="lazy" style="object-position:30% 30%"><span class="open">View project</span></div>
+        <div class="wmeta"><h3>Pyxoom 360° brand relaunch</h3><span>HR-tech SaaS · LATAM</span></div>
+        <p>One integrated campaign: new look, print, ebook, events, webinars, podcast and social, backed by a growth engine.</p>
+      </button>
+      <button class="wcard" type="button" data-case="partners" data-tags="growth" data-cursor="Open">
+        <div class="thumb"><img class="pxi" src="img/pyx-webinar.jpg" alt="Webinar 1 of 3 banner" loading="lazy" style="object-position:20% 50%"><span class="open">View project</span></div>
+        <div class="wmeta"><h3>Partner go-to-market in new LATAM markets</h3><span>Pyxoom · Distributors</span></div>
+        <p>A three-part webinar series with our distributors to open new countries.</p>
+      </button>
+      <button class="wcard" type="button" data-case="adoption" data-tags="launch" data-cursor="Open">
+        <div class="thumb"><div class="type ink">Everything<br>connects.</div><span class="open">View project</span></div>
+        <div class="wmeta"><h3>Change management &amp; adoption</h3><span>Pyxoom · with CS &amp; Product</span></div>
+        <p>Migrations, product adoption and the pre-launch of the new version to current clients.</p>
+      </button>
+      <button class="wcard" type="button" data-case="pom" data-tags="brand" data-cursor="Open">
+        <div class="thumb"><img class="pxi" src="img/axess-solar.jpg" alt="Axess ONE sun line campaign" loading="lazy" style="object-position:50% 35%"><span class="open">View project</span></div>
+        <div class="wmeta"><h3>Eyewear brand refresh</h3><span>Polímeros Ópticos</span></div>
+        <p>Five brands and a new sun line: concepts, photoshoots, point of sale and first social channels.</p>
+      </button>
+      <button class="wcard" type="button" data-case="edtest" data-tags="growth launch" data-cursor="Open">
+        <div class="thumb white"><img src="img/edtest-screen.jpg" alt="EdTest.ai on a desktop screen" loading="lazy" style="object-fit:contain"><span class="open">View project</span></div>
+        <div class="wmeta"><h3>EdTest.ai go-to-market</h3><span>Territorium · Edtech</span></div>
+        <p>Taking the first proctoring platform in Latin America to market during COVID.</p>
+      </button>
+      <button class="wcard" type="button" data-case="clr" data-tags="launch" data-cursor="Open">
+        <div class="thumb white"><img src="img/terr-clr.jpg" alt="CLR launch registration piece" loading="lazy" style="object-fit:contain"><span class="open">View project</span></div>
+        <div class="wmeta"><h3>CLR product launch</h3><span>Territorium · Edtech</span></div>
+        <p>A launch campaign for a digital learning record built on competencies.</p>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS & CREDENTIALS -->
+<section class="wrap partners" aria-label="Brands I have worked with">
+  <p class="eyebrow">Brands &amp; partners I've worked with</p>
+  <div class="row" data-pxx="-0.12"><span>Microsoft</span><span>Dell</span><span>HP</span><span>Pearson</span><span>Apple</span><span>edX</span><span>Endeavor</span><span>SENA</span></div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp sec" id="experience">
+  <div class="wrap">
+    <p class="eyebrow">Experience</p>
+    <h2 class="h2" data-pxx="0.05" style="margin-top:14px">13 years in B2B tech</h2>
+    <p class="lead" style="margin-top:14px">Click a year or use your arrow keys.</p>
+    <div class="rail-wrap"><div class="rail" role="tablist" aria-label="Career timeline" id="rail"><span class="fill" id="railFill" aria-hidden="true"></span></div></div>
+    <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+    <div class="rail-ctrl"><button type="button" id="prev" aria-label="Previous">&larr;</button><button type="button" id="next" aria-label="Next">&rarr;</button></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec" id="testimonials">
+  <div class="wrap">
+    <p class="eyebrow">What people say</p>
+    <h2 class="h2" data-pxx="0.05" style="margin-top:14px">Testimonials</h2>
+    <div class="quotes">
+      <blockquote class="q"><span class="mark" aria-hidden="true">“</span><p>I watched her develop into a skilled marketer, leading demand generation efforts and supporting sales with smart, data-driven strategies.</p>
+        <footer><b>Lilia Pla Hurtado</b><span>Marketing Strategy &amp; Operations · first manager, Migesa</span></footer></blockquote>
+      <blockquote class="q"><span class="mark" aria-hidden="true">“</span><p>She is focused and proactive, never stays with a doubt, and always looks for ways to innovate the processes and opportunities around her.</p>
+        <footer><b>Tess Carrera</b><span>Senior Marketing Project Manager, Epicor · translated from Spanish</span></footer></blockquote>
+      <blockquote class="q"><span class="mark" aria-hidden="true">“</span><p>Keyla is inquisitive, a fast learner… She was an absolute pleasure to bring into the organization, and a consistently positive force.</p>
+        <footer><b>Cody Voorhees</b><span>VP of Sales, Prompt Health · former manager</span></footer></blockquote>
+      <blockquote class="q"><span class="mark" aria-hidden="true">“</span><p>Her light-hearted and friendly energy combined with her dedication to helping customers + her “never give up” attitude made her a highly impactful member of our team.</p>
+        <footer><b>Anthony Fritz</b><span>Revenue leader · former manager, Product School</span></footer></blockquote>
+      <blockquote class="q"><span class="mark" aria-hidden="true">“</span><p>What truly sets Keyla apart is her genuine passion for helping others and her incredible ability to build strong, lasting relationships.</p>
+        <footer><b>Carlos Aguirre</b><span>CEO, LabServices · former teammate</span></footer></blockquote>
+      <blockquote class="q" style="background:var(--fill);color:var(--on-tomato)"><span class="mark" aria-hidden="true" style="color:var(--on-tomato)">“</span><p>Want to add yours? Reach me on LinkedIn.</p>
+        <footer><b>You, maybe</b><span style="color:inherit;opacity:.85">Next teammate or client</span></footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- OFF THE CLOCK -->
+<section class="otc">
+  <div class="wrap otc-grid">
+    <div>
+      <p class="eyebrow">Off the clock</p>
+      <h2>Snowy trails and loud concerts</h2>
+      <figure class="otc-photo" style="margin:20px 0 0"><img src="img/izta.jpg" alt="Keyla on a snowy trail at Iztaccíhuatl" width="1200" height="661" loading="lazy"><figcaption>Iztaccíhuatl, my favorite climb so far.</figcaption></figure>
+    </div>
+    <div class="cards">
+      <button class="card" type="button" aria-pressed="false" data-cursor="Flip"><span class="card-in">
+        <span class="face"><h3>Cold-weather hiker</h3><p>I plan hikes around orange leaves and snow. My proudest climb: Iztaccíhuatl.</p><small>Tap to flip</small></span>
+        <span class="face back"><p>Mexico's third-highest peak. Cold, slow and steep, and the best view I've ever earned. If snow is in the forecast, my weekend is booked.</p><small>Tap to flip back</small></span></span></button>
+      <button class="card" type="button" aria-pressed="false" data-cursor="Flip"><span class="card-in">
+        <span class="face"><h3>Live music</h3><p>I love time alone. I also love a packed festival.</p><small>Tap to flip</small></span>
+        <span class="face back"><p>Somehow I always end up in the middle of the crowd. Live music is worth the noise.</p><small>Tap to flip back</small></span></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2 style="margin-top:16px"><span data-pxx="-0.14" style="display:block;color:inherit">Let's grow</span><span data-pxx="0.14">something big.</span></h2>
+    <p class="lead">Tell me what you're building. I'll tell you how I'd grow it.</p>
+    <div class="cta-row">
+      <a class="btn solid" href="https://www.linkedin.com/in/keylaaleman" target="_blank" rel="noopener" data-cursor="Open">Connect on LinkedIn ↗</a>
+      <span class="email-chip"><span>growth.keyla@gmail.com</span><button type="button" class="copy" data-copy="growth.keyla@gmail.com" data-cursor="Copy">Copy</button></span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="#top" aria-label="Keyla Alemán, back to top">Keyla Alemán</a><p>Growth marketer for B2B SaaS. Strategy, brand, paid media, CRM and the team that ships it.</p></div>
+      <div><h4>Navigation</h4><ul><li><a href="#about">About</a></li><li><a href="#team">Team</a></li><li><a href="#work">Work</a></li><li><a href="#experience">Experience</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>growth.keyla@gmail.com</li><li><a href="https://www.linkedin.com/in/keylaaleman" target="_blank" rel="noopener">linkedin.com/in/keylaaleman</a></li><li>Monterrey, Mexico</li></ul></div>
+    </div>
+    <div class="made"><img class="char live made-char" src="img/char-coffee.png" alt="Cartoon of Keyla relaxing with a coffee" width="381" height="487" loading="lazy"><p><b>Made by me.</b>I designed and wrote every part of this site myself. Like what you see? Message me and let's talk.</p><a href="https://www.linkedin.com/in/keylaaleman" target="_blank" rel="noopener" data-cursor="Open">Message me ↗</a></div>
+    <div class="foot-bottom"><span>© 2026 Keyla Alemán</span><span>keylaaleman.com</span></div>
+  </div>
+</footer>
+
+<dialog class="case" id="caseDlg" aria-labelledby="caseTitle"><div class="case-in" id="caseBody"></div></dialog>
+<div class="progress" aria-hidden="true"><i id="progFill"></i><span id="progPct">00%</span></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span id="cursorLabel"></span></div>
+<button type="button" class="totop" id="toTop" aria-label="Return to the top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span class="tip">Return to the top</span></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, fine=matchMedia('(pointer: fine)').matches;
+
+  /* ---------- case studies ---------- */
+  const cases={
+    relaunch:{kicker:"Pyxoom · PSW Global · 2025 to now", title:"A 360° brand relaunch",
+      challenge:"Pyxoom is an established HR-tech SaaS used across LATAM. After several renames it had no consistent brand, scattered messaging and a growth process split between teams and tools.",
+      did:"I relaunched the brand as one integrated campaign. A new software look and message carried across print in Colombian HR media, a People Analytics ebook as the lead magnet, webinars and in-person events in Mexico and Colombia, client success stories, product videos, a podcast I host and trend content for social. Behind it sits the growth engine: HubSpot lead scoring and routing for 15+ countries, paid media on Meta, Google and LinkedIn, and SDR follow-up. I lead the team that runs it.",
+      wins:[["1","integrated campaign across print, digital, events and content"],["15+","countries covered by territory-based lead routing"],["2","countries with in-person events: Mexico and Colombia"]],
+      nda:"Revenue and pipeline figures are confidential under NDA.",
+      imgs:[["img/keyla-stage.jpg","Keyla speaking to an audience at a Pyxoom event","wide tall"],["img/pyx-print.jpg","Print ad in a Colombian HR magazine","wide"],["img/pyx-ebook.jpg","People Analytics ebook"],["img/pyx-gems.jpg","Gems trend post"],["img/pyx-80s.jpg","80s trend post","wide"]],
+      links:[["Webinar","https://youtu.be/qBdKwxvHjyI"],["Success story","https://www.youtube.com/watch?v=N9yYv2P295o"],["Podcast","https://www.youtube.com/watch?v=xgwHXB7_Fqw"],["Product video","https://www.youtube.com/watch?v=QiQmz4AthlY"],["Launch event","https://youtu.be/ajtHTQ-uxw0?t=3515"],["Print campaign","https://lnkd.in/p/ensC24kP"]]},
+    partners:{kicker:"Pyxoom · Distributor channel · LATAM", title:"Partner go-to-market in new markets",
+      challenge:"To grow outside Mexico, Pyxoom sells through distributors. Each new country needed demand and credibility before the first sales conversation.",
+      did:"I designed a three-part webinar series with our distributors, scheduled for Mexico and Paraguay time zones and aimed at CEOs and HR leaders. Each session tackles a problem leaders recognize, like losing key talent without noticing, and leads to a conversation with the local partner.",
+      wins:[["3","sessions in the series"],["2","time zones per session"]],
+      imgs:[["img/pyx-webinar.jpg","Webinar 1 of 3 promotional banner","wide"]], links:[]},
+    adoption:{kicker:"Pyxoom · with Customer Success & Product", title:"Change management & adoption",
+      challenge:"Current clients had to move to new versions of the platform, and many used only part of what they paid for. Every migration was a risk of churn and support tickets.",
+      did:"With Customer Success and Product, I ran the change management campaign for a platform version update, an adoption program through the learning platform to help clients use more of the product with fewer tickets, and the pre-launch of the new all-in-one version to the installed base under one idea: everything connects.",
+      wins:[["3","programs: migration, adoption and pre-launch"],["1","message for current clients: everything connects"]],
+      nda:"Client and usage figures are confidential under NDA.",
+      imgs:[], links:[["Pre-launch","https://lnkd.in/p/enHBMyx5"]]},
+    pom:{kicker:"Polímeros Ópticos · 2016 to 2018", title:"Eyewear brand refresh",
+      challenge:"Five eyewear brands had dated images, no online presence and a point of sale that didn't help opticians sell.",
+      did:"I directed new concepts, slogans and photoshoots for Ánima, Banderas, Axess ONE, Axess Kids and Axess Eyewear, then rebuilt the point of sale around them. I launched the Axess ONE sun line with its own New Arrival campaign, opened the brands' first social channels, brought in influencers and took them to city fairs and music festivals. A national training tour and a corporate university kept the campaigns working in store.",
+      wins:[["+40%","client acquisition"],["5","brands with a new concept, photography and POP"],["1","new sun line launched"]],
+      imgs:[["img/pom-banderas.jpg","Banderas eyewear campaign","wide"],["img/axess-solar.jpg","Axess ONE sun line campaign"],["img/pom-axess-one.jpg","Axess ONE campaign"],["img/pom-axess-kids.jpg","Axess Kids campaign"],["img/pom-axess.jpg","Axess Eyewear campaign"]], links:[]},
+    edtest:{kicker:"Territorium · EdTest.ai · COVID era", title:"Taking EdTest.ai to market",
+      challenge:"COVID moved exams online overnight, and schools needed a way to trust remote tests. Territorium launched EdTest.ai, the first proctoring platform in Latin America, and it needed a go-to-market from zero.",
+      did:"I built the go-to-market: positioning, the launch message and the campaign. I took the product to educators through a series of online events, including a 2021 workshop cycle where I spoke next to McGraw-Hill and HMH about how the pandemic changed schools. Around the same time I launched the bilingual campaign that opened Territorium's platform for free while schools were closed.",
+      wins:[["1st","proctoring platform launched in Latin America"],["3x","Microsoft Education Partner of the Year, in a row"]],
+      imgs:[["img/edtest-screen.jpg","EdTest.ai platform on a desktop screen","wide sq"],["img/edtest-talleres.jpg","2021 workshop cycle program with Keyla as a speaker","contain"],["img/terr-impulsando.jpg","Free platform campaign in Spanish"]],
+      links:[["Territorium video","https://vimeo.com/382446116"]]},
+    clr:{kicker:"Territorium · Product launch", title:"Launching CLR",
+      challenge:"Report cards showed grades and nothing else. Territorium built CLR, a digital learning record that organizes achievements and evidence by competency, and needed schools to register for the launch.",
+      did:"I created the launch campaign around a simple before-and-after: the old report card next to the CLR view. The visual makes the change obvious in one look, and the campaign was built to drive registrations for the launch.",
+      wins:[["1","before-and-after concept carried across the campaign"]],
+      imgs:[["img/terr-clr.jpg","CLR launch registration piece","wide sq"]], links:[]}
+  };
+  const dlg=document.getElementById('caseDlg'), body=document.getElementById('caseBody');
+  const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  function openCase(id){
+    const c=cases[id];
+    const wins=c.wins.map(w=>'<li><b>'+w[0]+'</b><span>'+esc(w[1])+'</span></li>').join('');
+    const gal=c.imgs.length?'<div class="gallery">'+c.imgs.map(i=>'<img src="'+i[0]+'" alt="'+esc(i[1])+'"'+(i[2]?' class="'+i[2]+'"':'')+'>').join('')+'</div>'
+      :'<div class="gallery"><div style="grid-column:span 2;aspect-ratio:1;background:var(--fill);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--display);text-transform:uppercase;font-size:clamp(30px,4vw,50px);line-height:1;padding:12px">Everything<br>connects.</div></div>';
+    const links=c.links.length?'<div><h4>Watch &amp; read</h4><div class="case-links">'+c.links.map(l=>'<a href="'+l[1]+'" target="_blank" rel="noopener">'+l[0]+'</a>').join('')+'</div></div>':'';
+    body.innerHTML='<div class="case-top"><div><p class="eyebrow">'+esc(c.kicker)+'</p><h2 id="caseTitle" style="margin-top:12px">'+esc(c.title)+'</h2></div><button type="button" class="close" id="caseClose">Close ✕</button></div>'+
+      '<div class="case-cols"><div class="case-copy"><div><h4>The challenge</h4><p>'+esc(c.challenge)+'</p></div><div><h4>What I did</h4><p>'+esc(c.did)+'</p></div>'+
+      '<div><h4>Highlights</h4><ul class="case-wins">'+wins+'</ul></div>'+(c.nda?'<p class="note-nda">'+c.nda+'</p>':'')+links+'</div>'+gal+'</div>';
+    document.getElementById('caseClose').onclick=()=>dlg.close();
+    
+    if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+    body.scrollTop=0;
+  }
+  document.querySelectorAll('.wcard').forEach(b=>b.addEventListener('click',()=>openCase(b.dataset.case)));
+  dlg.addEventListener('click',e=>{ if(e.target===dlg) dlg.close(); });
+
+  /* filters */
+  const fbtns=[...document.querySelectorAll('.filters button')];
+  fbtns.forEach(b=>b.addEventListener('click',()=>{
+    fbtns.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+    const f=b.dataset.f;
+    document.querySelectorAll('.wcard').forEach(c=>{ c.hidden = !(f==='all' || c.dataset.tags.split(' ').includes(f)); }); window.__pxRun&&window.__pxRun();
+  }));
+
+  /* what I bring: tabs + tool filter */
+  const tabs=[...document.querySelectorAll('.tabs [role=tab]')];
+  function selTab(t){tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});window.__pxRun&&window.__pxRun();}
+  tabs.forEach((t,i)=>{t.addEventListener('click',()=>selTab(t));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length];selTab(n);n.focus();e.preventDefault();}});});
+  const wall=document.getElementById('toolwall'), pills=[...document.querySelectorAll('.pills button')];
+  pills.forEach(pb=>pb.addEventListener('click',()=>{pills.forEach(x=>x.setAttribute('aria-pressed',x===pb?'true':'false'));const c=pb.dataset.c;
+    wall.classList.toggle('filtered',c!=='all');wall.querySelectorAll('.tool').forEach(t=>t.classList.toggle('on',t.dataset.c===c));}));
+
+  /* ---------- timeline ---------- */
+  const stops=[
+    {yr:"2013",co:"Migesa",role:"Marketing Coordinator · Monterrey",when:"2013 to 2016",body:"Demand generation campaigns for Microsoft, Dell and HP, with the lead nurturing and email automation behind them.",big:"+35%",res:"SQL conversion"},
+    {yr:"2016",co:"Polímeros Ópticos",role:"Marketing Manager · Mexico",when:"2016 to 2018",body:"Creative direction and relaunch of five eyewear brands, from concept and photoshoot to point of sale and first social channels.",big:"+40%",res:"client acquisition",img:"img/axess-solar.jpg",alt:"Axess ONE sun line campaign"},
+    {yr:"2018",co:"Territorium",role:"Marketing Growth Manager · Mexico, US, LATAM",when:"2018 to 2022",body:"Demand generation and brand building for an edtech SaaS across three markets, plus partnerships with global tech brands.",big:"+25%",res:"pipeline growth",img:"img/edtest-screen.jpg",alt:"EdTest.ai platform"},
+    {yr:"2022",co:"Product School",role:"Demand Generation · US edtech, remote",when:"2022 to 2025",body:"Multichannel campaigns for certification programs across the US, LATAM and Europe, from segmentation to reporting.",big:"$2M",res:"in revenue generated",img:"img/ps-team.jpg",alt:"Keyla with the Product School team"},
+    {yr:"2025",co:"SRPRO",role:"Fractional Growth & Enablement Specialist · US agency, remote",when:"2025 to 2026",body:"Enablement assets and nurture sequences for two new product lines, working daily with US sales and product teams.",big:"2",res:"product lines launched"},
+    {yr:"2025",co:"PSW Global",role:"Marketing Manager · Pyxoom, HR-tech SaaS",when:"2025 to now",body:"Leading brand and growth for an established HR-tech SaaS across LATAM, with a team of an SDR, a digital trafficker and a graphic designer.",big:"End to end",res:"strategy, brand, paid, CRM and follow-up",img:"img/keyla-stage.jpg",alt:"Keyla speaking at a Pyxoom event"}
+  ];
+  const rail=document.getElementById('rail'), panel=document.getElementById('panel'), fill=document.getElementById('railFill'); let cur=0;
+  stops.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.className='stop';b.id='stop'+i;b.setAttribute('role','tab');b.setAttribute('aria-controls','panel');
+    b.innerHTML='<span class="dot"></span><span class="yr">'+s.yr+'</span><span class="co">'+s.co+'</span>';b.onclick=()=>show(i,true);rail.appendChild(b);});
+  const sb=[...rail.querySelectorAll('.stop')];
+  function show(i,anim){cur=(i+stops.length)%stops.length;const s=stops[cur];
+    sb.forEach((b,j)=>{b.setAttribute('aria-selected',j===cur?'true':'false');b.tabIndex=j===cur?0:-1;b.classList.toggle('done',j<cur);});
+    fill.style.width=(sb[cur].offsetLeft+12)+'px';panel.setAttribute('aria-labelledby','stop'+cur);
+    const bigStyle=s.big.length>5?' style="font-size:clamp(34px,4.4vw,56px)"':'';
+    panel.innerHTML='<div><p class="when">'+s.when+'</p><h3>'+s.co+'</h3><p class="role">'+s.role+'</p><p class="body">'+s.body+'</p></div><div class="res"><b'+bigStyle+'>'+s.big+'</b><span>'+s.res+'</span></div>';
+    if(anim&&!reduce){panel.classList.remove('swap');void panel.offsetWidth;panel.classList.add('swap');}
+    if(anim){const w=rail.parentElement;w.scrollTo({left:sb[cur].offsetLeft-w.clientWidth/2+60,behavior:reduce?'auto':'smooth'});}
+  }
+  show(0,false); addEventListener('resize',()=>show(cur,false));
+  document.getElementById('prev').onclick=()=>show(cur-1,true); document.getElementById('next').onclick=()=>show(cur+1,true);
+  rail.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){show(cur+1,true);sb[cur].focus();e.preventDefault();} if(e.key==='ArrowLeft'){show(cur-1,true);sb[cur].focus();e.preventDefault();}});
+
+  /* ---------- hero layering ---------- */
+  if(!reduce&&fine){const a=document.getElementById('heroArt'),p=document.getElementById('heroPhoto'),bl=document.getElementById('heroBlock');let raf=0,tx=0,ty=0;
+    const ap=()=>{p.style.transform='translate('+tx*16+'px,'+ty*10+'px)';bl.style.transform='translate('+(-tx*10)+'px,'+(-ty*6)+'px)';raf=0;};
+    a.closest('.hero').addEventListener('pointermove',e=>{const r=a.getBoundingClientRect();tx=(e.clientX-r.left)/r.width-.5;ty=(e.clientY-r.top)/r.height-.5;if(!raf)raf=requestAnimationFrame(ap);});
+    a.closest('.hero').addEventListener('pointerleave',()=>{tx=ty=0;if(!raf)raf=requestAnimationFrame(ap);});}
+
+
+  /* ---------- scroll progress bar ---------- */
+  const bar=document.getElementById('progFill'), pct=document.getElementById('progPct');
+  function prog(){const h=document.documentElement.scrollHeight-innerHeight;const v=h>0?Math.min(1,Math.max(0,scrollY/h)):0;
+    bar.style.transform='scaleY('+v.toFixed(4)+')';pct.textContent=String(Math.round(v*100)).padStart(2,'0')+'%';}
+  addEventListener('scroll',prog,{passive:true});addEventListener('resize',prog);prog();
+
+  /* ---------- title parallax + section boxes rising into view ---------- */
+  if(!reduce){
+    const els=[...document.querySelectorAll('[data-px],[data-pxx]')], imgs=[...document.querySelectorAll('img.pxi')];
+    const boxes=[...document.querySelectorAll('main > section:not(.hero), body > footer.footer')];
+    boxes.forEach(b=>b.classList.add('box'));
+    const small=matchMedia('(max-width:700px)');
+    let ticking=false;
+    function run(){
+      const vh=innerHeight, k=small.matches?0.5:1;
+      for(const el of els){
+        const r=el.getBoundingClientRect(); if(r.bottom<-200||r.top>vh+200) continue;
+        const d=(r.top+r.height/2)-vh/2;
+        const y=el.dataset.px?-d*parseFloat(el.dataset.px)*k:0, x=el.dataset.pxx?d*parseFloat(el.dataset.pxx)*k:0;
+        el.style.translate=x.toFixed(1)+'px '+y.toFixed(1)+'px';
+      }
+      for(const im of imgs){
+        const box=im.parentElement.getBoundingClientRect(); if(box.bottom<0||box.top>vh) continue;
+        im.style.translate='0 '+((((box.top+box.height/2)-vh/2)/vh)*-14).toFixed(2)+'%';
+      }
+      for(const b of boxes){
+        const r=b.getBoundingClientRect();
+        const p=Math.max(0,Math.min(1,(vh-r.top)/(vh*0.55)));
+        const e=1-Math.pow(1-p,3);
+        if(e>=0.999){b.style.transform='';b.style.clipPath='';continue;}
+        const inset=(1-e)*3, rad=(1-e)*20;
+        b.style.transform='translateY('+((1-e)*40).toFixed(1)+'px)';
+        b.style.clipPath='inset(0 '+inset.toFixed(2)+'% 0 '+inset.toFixed(2)+'% round '+rad.toFixed(1)+'px)';
+      }
+      ticking=false;
+    }
+    window.__pxRun=run;
+    addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(run);}},{passive:true});
+    addEventListener('resize',run); run();
+  }
+
+  /* ---------- results: count up once ---------- */
+  (function(){
+    const list=document.querySelector('.res-list'); if(!list||reduce||!('IntersectionObserver' in window)) return;
+    const cts=[...list.querySelectorAll('.ct')]; let done=false;
+    const r=list.getBoundingClientRect(); if(r.top<innerHeight&&r.bottom>0) return;
+    cts.forEach(c=>c.textContent='0');
+    const io=new IntersectionObserver(es=>{ if(done||!es[0].isIntersecting) return; done=true; io.disconnect();
+      const t0=performance.now(), D=1100;
+      (function tick(t){const k=Math.min(1,(t-t0)/D), e=1-Math.pow(1-k,3);
+        cts.forEach(c=>c.textContent=String(Math.round(+c.dataset.to*e))); if(k<1) requestAnimationFrame(tick);})(t0);
+    },{threshold:.5});
+    io.observe(list);
+  })();
+
+  /* ---------- back to top ---------- */
+  const topBtn=document.getElementById('toTop');
+  const showTop=()=>topBtn.classList.toggle('show',scrollY>innerHeight*0.8);
+  addEventListener('scroll',showTop,{passive:true});showTop();
+  topBtn.addEventListener('click',()=>{scrollTo({top:0,behavior:reduce?'auto':'smooth'});document.querySelector('.logo').focus({preventScroll:true});});
+
+  /* ---------- flip cards ---------- */
+  document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true')));
+
+  /* ---------- copy ---------- */
+  const toast=document.getElementById('toast');let tt;const say=t=>{toast.textContent=t;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('show'),2200);};
+  document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.copy;
+    const fb=()=>{const s=b.previousElementSibling,r=document.createRange();r.selectNodeContents(s);const sel=getSelection();sel.removeAllRanges();sel.addRange(r);say('Email selected. Press Ctrl+C or ⌘C to copy.');};
+    try{navigator.clipboard.writeText(v).then(()=>say('Copied: '+v),fb);}catch(e){fb();}}));
+
+  /* ---------- cursor ---------- */
+  if(fine&&!reduce){const c=document.getElementById('cursor'),l=document.getElementById('cursorLabel');
+    let x=-99,y=-99,cx=-99,cy=-99;
+    addEventListener('pointermove',e=>{x=e.clientX;y=e.clientY;const t=e.target.closest&&e.target.closest('[data-cursor]');
+      if(t){l.textContent=t.dataset.cursor;c.classList.add('big','on');}else c.classList.remove('big','on');});
+    document.addEventListener('pointerleave',()=>c.classList.remove('on'));
+    (function loop(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop);})();}
+})();
+</script>
+</body>
+</html>
